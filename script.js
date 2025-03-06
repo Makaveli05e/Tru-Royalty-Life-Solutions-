@@ -17,3 +17,15 @@ document.querySelectorAll("header ul li a").forEach(link => {
         typeEffect();
     });
 });
+// JavaScript to toggle the mobile navigation menu visibility
+const hamburger = document.getElementById("hamburger");
+const navList = document.getElementById("nav-list");
+
+hamburger.addEventListener("click", () => {
+    if (navList.style.left === "0px") {
+        navList.style.left = "-250px";  // Hide the mobile menu
+    } else {
+        navList.style.left = "0";  // Show the mobile menu
+    }
+});
+
