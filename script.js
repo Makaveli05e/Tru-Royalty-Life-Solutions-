@@ -15,9 +15,17 @@ document.addEventListener("DOMContentLoaded", () => {
         dropdownMenu.style.display = dropdownMenu.style.display === "block" ? "none" : "block";
     });
 
-    document.addEventListener("click", (event) => {
-        if (!dropdownMenu.contains(event.target) && event.target !== menuBtn) {
-            dropdownMenu.style.display = "none";
-        }
+    // Login Modal
+    const loginModal = document.getElementById("login-modal");
+    const loginBtn = document.getElementById("login-btn");
+    const mobileLoginBtn = document.getElementById("mobile-login-btn");
+    const closeBtn = document.querySelector(".close");
+
+    [loginBtn, mobileLoginBtn].forEach(btn => btn.addEventListener("click", () => {
+        loginModal.classList.add("show");
+    }));
+
+    closeBtn.addEventListener("click", () => {
+        loginModal.classList.remove("show");
     });
 });
