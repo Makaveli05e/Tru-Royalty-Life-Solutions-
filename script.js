@@ -28,4 +28,3 @@ hamburger.addEventListener("click", () => {
         navList.style.left = "0";  // Show the mobile menu
     }
 });
-
