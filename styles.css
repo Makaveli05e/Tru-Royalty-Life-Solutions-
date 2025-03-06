@@ -46,13 +46,7 @@ footer {
 .grape-nuts {
     font-family: "Grape Nuts", cursive;
     font-size: 30px;
-    color: #333
-}
-
-.covered-by-your-grace-regular {
-  font-family: "Covered By Your Grace", cursive;
-  font-weight: 400;
-  font-style: normal;
+    color: #333;
 }
 
 .logo {
@@ -60,19 +54,7 @@ footer {
     font-size: 36px;
 }
 
-.delicious-handrawn-regular {
-  font-family: "Delicious Handrawn", cursive;
-  font-weight: 400;
-  font-style: normal;
-}
-/* Basic body styling */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-/* Hamburger Menu Icon */
+/* Hamburger Menu */
 .hamburger {
     width: 30px;
     height: 20px;
@@ -92,85 +74,54 @@ body {
     background-color: #333;
 }
 
-/* Regular Navigation Styling (Visible on Desktop and Mobile) */
-nav ul.main-nav {
+/* Mobile Navigation */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    padding-top: 60px;
+    transition: left 0.3s ease-in-out;
+}
+
+.mobile-nav ul {
     list-style: none;
-    display: flex;
-    margin: 0;
     padding: 0;
 }
 
-nav ul.main-nav li {
-    margin-left: 20px;
+.mobile-nav ul li {
+    padding: 15px;
 }
 
-nav ul.main-nav li a {
-    text-decoration: none;
-    color: #333;
-    font-size: 18px;
-}
-
-nav ul.main-nav li a:hover {
-    color: #007bff;
-}
-
-/* Mobile Navigation (Initially hidden) */
-nav ul.mobile-nav {
-    list-style: none;
-    display: none; /* Hidden by default */
-}
-
-nav ul.mobile-nav li {
-    margin-left: 0;
-    margin-bottom: 20px;
-}
-
-nav ul.mobile-nav li a {
+.mobile-nav ul li a {
     color: white;
-    font-size: 18px;
+    text-decoration: none;
 }
 
-/* Responsive for smaller screens */
-@media (max-width: 768px) {
-    /* Hamburger menu visible on mobile */
-    .hamburger {
-        display: flex;
-    }
-
-    /* Mobile menu */
-    nav ul.mobile-nav {
-        position: fixed;
-        top: 0;
-        left: -250px; /* Initially off-screen */
-        width: 250px;
-        height: 100%;
-        background-color: #333;
-        flex-direction: column;
-        padding-top: 60px;
-        transition: left 0.3s ease;
-    }
-
-    nav ul.mobile-nav li {
-        margin-left: 0;
-        margin-bottom: 20px;
-    }
-
-    nav ul.mobile-nav li a {
-        color: white;
-    }
-
-    nav ul.mobile-nav li a:hover {
-        background-color: #444;
-    }
-}
-
+/* Dropdown Menu */
 .menu {
     position: absolute;
-    top: 50px; /* Adjust as needed */
-    left: 10px; /* Adjust as needed */
+    top: 50px;
+    left: 10px;
     background: #333;
     color: white;
     display: none;
     padding: 10px;
     border-radius: 5px;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu ul li {
+    padding: 10px;
+}
+
+.menu ul li a {
+    color: white;
+    text-decoration: none;
 }
