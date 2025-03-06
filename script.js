@@ -1,29 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const menuBtn = document.getElementById("menu-btn");
-    const dropdownMenu = document.getElementById("dropdown-menu");
-
-    menuBtn.addEventListener("click", () => {
-        if (dropdownMenu.style.display === "block") {
-            dropdownMenu.style.display = "none";
-        } else {
-            dropdownMenu.style.display = "block";
-        }
-    });
-
-    document.addEventListener("click", (event) => {
-        if (!dropdownMenu.contains(event.target) && !menuBtn.contains(event.target)) {
-            dropdownMenu.style.display = "none";
-        }
-    });
-
+    // Mobile Navigation
     const hamburger = document.getElementById("hamburger");
     const mobileNav = document.getElementById("mobile-nav");
 
     hamburger.addEventListener("click", () => {
-        if (mobileNav.style.left === "0px") {
-            mobileNav.style.left = "-250px"; 
-        } else {
-            mobileNav.style.left = "0";
+        mobileNav.style.left = mobileNav.style.left === "0px" ? "-250px" : "0";
+    });
+
+    // Dropdown Menu
+    const menuBtn = document.getElementById("menu-btn");
+    const dropdownMenu = document.getElementById("dropdown-menu");
+
+    menuBtn.addEventListener("click", () => {
+        dropdownMenu.style.display = dropdownMenu.style.display === "block" ? "none" : "block";
+    });
+
+    document.addEventListener("click", (event) => {
+        if (!dropdownMenu.contains(event.target) && event.target !== menuBtn) {
+            dropdownMenu.style.display = "none";
         }
     });
 });
