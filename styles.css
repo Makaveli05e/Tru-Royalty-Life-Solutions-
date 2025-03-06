@@ -163,14 +163,3 @@ nav ul.mobile-nav li a {
         background-color: #444;
     }
 }
-
-.menu {
-    position: absolute;
-    top: 50px; /* Adjust as needed */
-    left: 10px; /* Adjust as needed */
-    background: #333;
-    color: white;
-    display: none;
-    padding: 10px;
-    border-radius: 5px;
-}
