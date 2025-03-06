@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap" rel="stylesheet">
+    <!-- Include GSAP library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <style>
         body {
@@ -122,41 +123,6 @@
         </div>
     </footer>
     
-    <script>
-        // Toggle the menu visibility
-        function toggleMenu() {
-            const menu = document.getElementById('dropdown-menu');
-            
-            // If the menu is hidden, slide it in
-            if (menu.style.display === 'none' || menu.style.display === '') {
-                menu.style.display = 'block';
-                gsap.fromTo(menu, {
-                    x: '-100%',
-                    opacity: 0,
-                    scale: 0.5
-                }, {
-                    x: '0',
-                    opacity: 1,
-                    scale: 1,
-                    duration: 1
-                });
-            } else {
-                gsap.to(menu, {
-                    x: '-100%',
-                    opacity: 0,
-                    scale: 0.5,
-                    duration: 0.8,
-                    onComplete: function() {
-                        menu.style.display = 'none';
-                    }
-                });
-            }
-        }
-
-        // Add hamburger toggle functionality
-        document.getElementById("hamburger").addEventListener("click", function() {
-            toggleMenu();
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
