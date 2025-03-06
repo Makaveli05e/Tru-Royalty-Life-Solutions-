@@ -1,3 +1,8 @@
+document.addEventListener("click", (event) => {
+    if (!dropdownMenu.contains(event.target) && !menuBtn.contains(event.target)) {
+        dropdownMenu.style.display = "none"; // Hide the dropdown
+    }
+});
 document.querySelectorAll("header ul li a").forEach(link => {
     link.addEventListener("click", function(event) {
         event.preventDefault(); // Prevents instant navigation for effect to play
