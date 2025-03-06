@@ -12,19 +12,36 @@
     <link href="https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Delicious+Handrawn&display=swap" rel="stylesheet">
     </head>
 <body>
-    <header>
-        <div class="logo">FOREIGN HQ</div>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Gig Opportunities</a></li>
-                <li><a href="#">Legal Aid</a></li>
-                <li><a href="#">Resources</a></li>
-                <li><a href="#">Contact</a></li>
-                <script src="script.js"></script>
-            </ul>
-        </nav>
-    </header>
+   <header>
+    <div class="logo">FOREIGN HQ</div>
+    <!-- Regular Navigation Menu (Visible on Desktop and Mobile) -->
+    <nav>
+        <ul class="main-nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Gig Opportunities</a></li>
+            <li><a href="#">Legal Aid</a></li>
+            <li><a href="#">Resources</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hamburger Icon (Visible on Desktop and Mobile) -->
+    <div class="hamburger" id="hamburger">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+    </div>
+
+    <!-- Hamburger Menu Navigation (Visible on Desktop and Mobile) -->
+    <nav class="mobile-nav" id="mobile-nav">
+        <ul id="nav-list">
+            <li><a href="#">DHS</a></li>
+            <li><a href="#">ICE</a></li>
+            <li><a href="#">DHHS</a></li>
+            <li><a href="#">IRS</a></li>
+        </ul>
+    </nav>
+</header>
     
     <section class="hero">
         <p><span class="grape-nuts">Where Foreigners from Around the World Connect, Work, and Thrive Together...</span></p>
