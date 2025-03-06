@@ -5,18 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foreign HQ</title>
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Grape+Nuts&family=Delicious+Handrawn&display=swap" rel="stylesheet">
+
+    <!-- GSAP Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 </head>
 <body>
+
     <header>
         <div class="logo">FOREIGN HQ</div>
-        <nav>
-            <ul class="main-nav">
+        
+        <!-- Navigation for Desktop -->
+        <nav class="desktop-nav">
+            <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Gig Opportunities</a></li>
                 <li><a href="#">Legal Aid</a></li>
@@ -25,16 +30,15 @@
             </ul>
         </nav>
 
-        <!-- Hamburger Icon -->
+        <!-- Mobile Navigation -->
         <div class="hamburger" id="hamburger">
             <span class="line"></span>
             <span class="line"></span>
             <span class="line"></span>
         </div>
 
-        <!-- Mobile Navigation -->
         <nav class="mobile-nav" id="mobile-nav">
-            <ul id="nav-list">
+            <ul>
                 <li><a href="#">DHS</a></li>
                 <li><a href="#">ICE</a></li>
                 <li><a href="#">DHHS</a></li>
@@ -46,11 +50,11 @@
     <section class="hero">
         <p><span class="grape-nuts">Where Foreigners from Around the World Connect, Work, and Thrive Together...</span></p>
         <p>With Opportunities, Financial Resources, and Legal Aid Support for Gig Workers</p>
-        <button><a href="#">Join Us Now</a></button>
+        <button class="join-btn"><a href="#">Join Us Now</a></button>
     </section>
 
-    <!-- Dropdown Menu -->
     <button class="menu-btn" id="menu-btn">Start</button>
+
     <div id="dropdown-menu" class="menu">
         <ul>
             <li><a href="#">Option 1</a></li>
@@ -58,13 +62,13 @@
             <li><a href="#">Option 3</a></li>
         </ul>
     </div>
-
+    
     <footer>
         <div class="footer-links">
             <a href="#">Terms of Service</a>
             <a href="#">Privacy Policy</a>
-            <a href="#">2025@Tru Royalty Life Solutions.</a>
-            <a href="#">All Rights</a>
+            <a href="#">2025 @ Tru Royalty Life Solutions.</a>
+            <a href="#">All Rights Reserved</a>
         </div>
     </footer>
 
