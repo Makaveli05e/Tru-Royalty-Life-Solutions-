@@ -9,54 +9,154 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Delicious+Handrawn&display=swap" rel="stylesheet">
-    </head>
+    <link href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .menu {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 250px;
+            height: 100vh;
+            background-color: #333;
+            color: white;
+            transform: translateX(-100%);
+            opacity: 0;
+            display: none;
+        }
+        .menu ul {
+            list-style-type: none;
+            padding: 20px;
+            margin: 0;
+        }
+        .menu ul li {
+            margin: 15px 0;
+        }
+        .menu ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            display: block;
+        }
+        .menu-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            cursor: pointer;
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px;
+            font-size: 18px;
+        }
+        .logo {
+            font-family: 'Covered By Your Grace', sans-serif;
+            font-size: 32px;
+            color: #333;
+        }
+        .hero p {
+            font-family: 'Grape Nuts', sans-serif;
+        }
+    </style>
+</head>
 <body>
-   <header>
-    <div class="logo">FOREIGN HQ</div>
-    <!-- Regular Navigation Menu (Visible on Desktop and Mobile) -->
-    <nav>
-        <ul class="main-nav">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Gig Opportunities</a></li>
-            <li><a href="#">Legal Aid</a></li>
-            <li><a href="#">Resources</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
+    <header>
+        <div class="logo">FOREIGN HQ</div>
+        <nav>
+            <ul class="main-nav">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Gig Opportunities</a></li>
+                <li><a href="#">Legal Aid</a></li>
+                <li><a href="#">Resources</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
 
-    <!-- Hamburger Icon (Visible on Desktop and Mobile) -->
-    <div class="hamburger" id="hamburger">
-        <span class="line"></span>
-        <span class="line"></span>
-        <span class="line"></span>
-    </div>
+        <!-- Hamburger Icon -->
+        <div class="hamburger" id="hamburger">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </div>
 
-    <!-- Hamburger Menu Navigation (Visible on Desktop and Mobile) -->
-    <nav class="mobile-nav" id="mobile-nav">
-        <ul id="nav-list">
-            <li><a href="#">DHS</a></li>
-            <li><a href="#">ICE</a></li>
-            <li><a href="#">DHHS</a></li>
-            <li><a href="#">IRS</a></li>
-        </ul>
-    </nav>
-</header>
-    
+        <!-- Mobile Navigation -->
+        <nav class="mobile-nav" id="mobile-nav">
+            <ul id="nav-list">
+                <li><a href="#">DHS</a></li>
+                <li><a href="#">ICE</a></li>
+                <li><a href="#">DHHS</a></li>
+                <li><a href="#">IRS</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <section class="hero">
         <p><span class="grape-nuts">Where Foreigners from Around the World Connect, Work, and Thrive Together...</span></p>
         <p>With Opportunities, Financial Resources, and Legal Aid Support for Gig Workers</p>
         <button><a href="#">Join Us Now</a></button>
     </section>
 
-    <footer>
-    <div class="footer-links">
-        <a href="#">Terms of Service</a>
-        <a href="#">Privacy Policy</a>
-        <a href="#">2025@Tru Royalty Life Solutions.</a>
-        <a href="#">All Rights</a>
+    <button class="menu-btn" onclick="toggleMenu()">☰ Open Menu</button>
+
+    <div class="menu" id="dropdown-menu">
+        <ul>
+            <li><a href="#">DHS</a></li>
+            <li><a href="#">ICE</a></li>
+            <li><a href="#">DHHS</a></li>
+            <li><a href="#">IRS</a></li>
+        </ul>
     </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="#">Terms of Service</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">2025@Tru Royalty Life Solutions.</a>
+            <a href="#">All Rights</a>
+        </div>
     </footer>
- <script src="script.js"></script>
+    
+    <script>
+        // Toggle the menu visibility
+        function toggleMenu() {
+            const menu = document.getElementById('dropdown-menu');
+            
+            // If the menu is hidden, slide it in
+            if (menu.style.display === 'none' || menu.style.display === '') {
+                menu.style.display = 'block';
+                gsap.fromTo(menu, {
+                    x: '-100%',
+                    opacity: 0,
+                    scale: 0.5
+                }, {
+                    x: '0',
+                    opacity: 1,
+                    scale: 1,
+                    duration: 1
+                });
+            } else {
+                gsap.to(menu, {
+                    x: '-100%',
+                    opacity: 0,
+                    scale: 0.5,
+                    duration: 0.8,
+                    onComplete: function() {
+                        menu.style.display = 'none';
+                    }
+                });
+            }
+        }
+
+        // Add hamburger toggle functionality
+        document.getElementById("hamburger").addEventListener("click", function() {
+            toggleMenu();
+        });
+    </script>
 </body>
 </html>
