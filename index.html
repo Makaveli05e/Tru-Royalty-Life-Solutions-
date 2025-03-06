@@ -3,69 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title class="title">Foreign HQ</title>
+    <title>Foreign HQ</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap" rel="stylesheet">
-    <!-- Include GSAP library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <script src="script.js"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        .menu {
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 250px;
-            height: 100vh;
-            background-color: #333;
-            color: white;
-            transform: translateX(-100%);
-            opacity: 0;
-            display: none;
-        }
-        .menu ul {
-            list-style-type: none;
-            padding: 20px;
-            margin: 0;
-        }
-        .menu ul li {
-            margin: 15px 0;
-        }
-        .menu ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-            display: block;
-        }
-        .menu-btn {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            cursor: pointer;
-            background-color: #333;
-            color: white;
-            border: none;
-            padding: 10px;
-            font-size: 18px;
-        }
-        .logo {
-            font-family: 'Covered By Your Grace', sans-serif;
-            font-size: 32px;
-            color: #333;
-        }
-        .hero p {
-            font-family: 'Grape Nuts', sans-serif;
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -104,15 +49,16 @@
         <button><a href="#">Join Us Now</a></button>
     </section>
 
-    <button class="menu-btn">Start</button>
-<div id="dropdown-menu" class="menu">
-    <ul>
-        <li><a href="#">Option 1</a></li>
-        <li><a href="#">Option 2</a></li>
-        <li><a href="#">Option 3</a></li>
-    </ul>
-</div>
-    
+    <!-- Dropdown Menu -->
+    <button class="menu-btn" id="menu-btn">Start</button>
+    <div id="dropdown-menu" class="menu">
+        <ul>
+            <li><a href="#">Option 1</a></li>
+            <li><a href="#">Option 2</a></li>
+            <li><a href="#">Option 3</a></li>
+        </ul>
+    </div>
+
     <footer>
         <div class="footer-links">
             <a href="#">Terms of Service</a>
@@ -121,5 +67,7 @@
             <a href="#">All Rights</a>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
